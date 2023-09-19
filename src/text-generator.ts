@@ -50,7 +50,7 @@ export default class TextGenerator extends RequestHandler {
   }
 
   async generateFromTemplate(
-    params: TextGeneratorSettings,
+    params: Partial<TextGeneratorSettings>,
     templatePath: string,
     insertMetadata = true,
     editor: Editor,
@@ -247,7 +247,7 @@ export default class TextGenerator extends RequestHandler {
   }
 
   async generateToClipboard(
-    params: TextGeneratorSettings,
+    params: Partial<TextGeneratorSettings>,
     templatePath: string,
     insertMetadata = false,
     editor: Editor
@@ -304,7 +304,7 @@ export default class TextGenerator extends RequestHandler {
   }
 
   async createToFile(
-    params: TextGeneratorSettings,
+    params: Partial<TextGeneratorSettings>,
     templatePath: string,
     insertMetadata = false,
     editor: Editor,
