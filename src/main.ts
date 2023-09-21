@@ -366,7 +366,6 @@ export default class TextGeneratorPlugin extends Plugin {
 		*/
 
     // registers
-    console.log("reaching add commands function");
     await this.addCommands();
 
     await this.packageManager.load();
@@ -467,11 +466,13 @@ export default class TextGeneratorPlugin extends Plugin {
                   );
                   break;
                 case "insert":
-                  await this.textGenerator.createToFile(
+                  await this.textGenerator.generateFromTemplate(
                     {},
                     template.path,
                     true,
                     editor,
+                    true,
+                    {},
                     true
                   );
                   break;
@@ -485,12 +486,14 @@ export default class TextGeneratorPlugin extends Plugin {
                   );
                   break;
                 case "insert&create":
-                  await this.textGenerator.createToFile(
+                  await this.textGenerator.generateFromTemplate(
                     {},
                     template.path,
                     true,
                     editor,
-                    false
+                    false,
+                    {},
+                    true
                   );
                   break;
                 case "modal":

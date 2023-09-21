@@ -137,7 +137,7 @@ const commands: Command[] = [
           self.app,
           self,
           async (result) => {
-            await self.textGenerator.createToFile(
+            await self.textGenerator.generateFromTemplate(
               {},
               result.path,
               true,
@@ -165,12 +165,14 @@ const commands: Command[] = [
           self.app,
           self,
           async (result) => {
-            await self.textGenerator.createToFile(
+            await self.textGenerator.generateFromTemplate(
               {},
               result.path,
               true,
               editor,
-              false
+              false,
+              {},
+              true
             );
           },
           "Create a New Note From Template"
